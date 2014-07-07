@@ -26,3 +26,6 @@ python run.py
 
 To send an HTTP query to the Flask app:
 curl localhost:5000'/search?query=family=CK1'
+
+The query parser is to be implemented in flaskapp/views.py, within the
+query\_db method.
