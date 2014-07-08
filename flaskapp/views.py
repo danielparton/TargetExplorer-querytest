@@ -7,11 +7,12 @@ from flaskapp import app, db, models
 # UniProt.taxon_name_common: ['Human', 'Mouse', 'Bovine', ...]
 # UniProtDomain.length: [270, 255, 255, 260, ...]
 
-# Example API query strings (SQLAlchemy syntax)
-# ---------------------------------------------
+# Example API query strings (SQLAlchemy query syntax)
+# ---------------------------------------------------
 # 'family="CK1"'
 # 'family="CK1" and domain_length<270'
 # 'family="TK" and species="Human" and domain_length<260'
+# '(family="CK1" or family="AGC") and species="Human" and domain_length<260'
 
 # This dictionary maps frontend data fields (e.g. 'family') to 2-element lists
 # (e.g. ['UniProt', 'family']), which represent the backend table name,
