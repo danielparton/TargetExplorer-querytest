@@ -35,7 +35,7 @@ def query_db():
     # combine the results and return (or print)
 
     # Some instructive examples of SQLAlchemy functionality:
-    query1 = db.session.query(models.DBEntry).join(models.UniProt).filter('family="TK"')
+    query1 = db.session.query(models.DBEntry).join(models.UniProt).filter('UniProt.family="TK"')
     print query1.all()
     # queries_combined = query1.intersect(query2, query3)
 
