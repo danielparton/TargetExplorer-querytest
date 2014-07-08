@@ -29,5 +29,4 @@ The query method is to be implemented as query\_db, within flaskapp/views.py
 
 A placeholder method has been set up.
 
-To run the query method (from this directory):
-python run.py
+To run the query method (from this directory): `python run.py`
