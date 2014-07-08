@@ -1,7 +1,7 @@
-TargetExplorer-QLtest
-=====================
+TargetExplorer-querytest
+========================
 
-Minimal Flask/SQLAlchemy app for developing a simple query language
+Minimal Flask/SQLAlchemy app for developing a simple query method
 
 Manifest
 --------
@@ -9,23 +9,20 @@ Manifest
 * kinome.db - Pre-populated SQLite database
 * flaskapp/ - Flask app
   * views.py - Flask methods for responding to HTTP requests
-  * models.py - SQLAlchemy data models
-* run.py - Runs the Flask app server at localhost:5000
+  * models.py - SQLAlchemy ORM data model
+* run.py - Runs the query method directly (does not actually run the Flask HTTP server)
 
-Installing dependencies
------------------------
+To install dependencies:
+------------------------
 
 pip install flask
+
 pip install flask-sqlalchemy
 
 Instructions
 ------------
 
-To run the Flask app (from this directory):
+The query method is to be implemented as query\_db, within flaskapp/views.py
+
+To run the placeholder query method (from this directory):
 python run.py
-
-To send an HTTP query to the Flask app:
-curl localhost:5000'/search?query=family=CK1'
-
-The query parser is to be implemented in flaskapp/views.py, within the
-query\_db method.

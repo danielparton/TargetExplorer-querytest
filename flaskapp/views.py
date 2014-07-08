@@ -5,47 +5,47 @@ from flaskapp import app, db, models
 # Get multiple database entries given a query string
 # ======
 
-# = Example data types from the table 'UniProt' =
-# id: [1, 2, 3, ...]
-# family: ['CK1', 'AGC', 'TK', ...]
-# taxon_name_common: ['Human', 'Mouse', 'Bovine', ...]
+# Example data types
+# ------------------
+# UniProt.family: ['CK1', 'AGC', 'TK', ...]
+# UniProt.taxon_name_common: ['Human', 'Mouse', 'Bovine', ...]
+# UniProtDomain.length: [270, 255, 255, 260, ...]
 
-# = Example API query strings =
-# family=CK1
-# family=CK1 && id<1000
-# family=CK1 || (family=AGC && taxon_name_common=Human)
-# family=CK1 || ((family=AGC || family=TK) && taxon_name_common=Human)
-# (many other data types will eventually need to be queryable)
+# Example API query strings
+# -------------------------
+# 'UniProt.family="TK"'
+# 'UniProt.family="TK" && UniProtDomain.length<270'
+# 'UniProt.family="TK" && UniProt.taxon_name_common="Human" && UniProtDomain.length<270'
 
-# = Other syntax =
-# Equality/relational operators: =, !=, >, <, >=, <=
-# Eventually: regex text searching
-
-# = Example URL request with curl =
-# curl localhost:5000'/search?query=family=CK1 && id<1000'
+# Limited set of operators (for now)
+# ----------------------------------
+# &&, =, >, <
 
 @app.route('/search', methods = ['GET'])
 def query_db():
-    query_string = request.args.get('query')
+    # query_string = request.args.get('query')
 
-    valid_fields = ['family', 'taxon_name_common', 'id']
+    # Example API query strings
+    # query_string = 'family="TK"'
+    query_string = 'UniProt.family="TK" && UniProtDomain.length<270'
+    # query_string = 'UniProt.family="TK" && UniProt.taxon_name_common="Human" && UniProtDomain.length<260'
 
-    results_obj = []
+    # TODO divide the query_string into individual statements (e.g. 'UniProt.family="TK"')
+    # use each statement to carry out a separate query of the SQL database
+    # combine the results and return (or print)
 
-    # Parse query_string, check all fields are valid, and convert into sql_query_string
-    # TODO
+    # Some instructive examples of SQLAlchemy functionality:
+    query1 = db.session.query(models.DBEntry).join(models.UniProt).filter('family="TK"')
+    print query1.all()
+    # queries_combined = query1.intersect(query2, query3)
 
 
 
-    # Example SQL query strings:
-    # sql_query_string="family='CK1' and id<1000"
-    sql_query_string="family='CK1' or ((family='AGC' or family='TK') and taxon_name_common='Human')"
+    # # Output
+    # for dbentry_row in results.all():
+    #     uniprot_row = dbentry_row.uniprot.first()
+    #     uniprot_domain_rows = dbentry_row.uniprotdomains
+    #     uniprot_domain_lengths = [domain.length for domain in uniprot_domain_rows]
+    #     output_string = '%d %s %s %r' % (dbentry_row.id, uniprot_row.entry_name, uniprot_row.family, uniprot_domain_lengths)
+    #     print output_string
 
-    query = db.session.query(models.UniProt).filter(sql_query_string)
-    query_rows = query.all()
-
-    # return a string containing basic information about the query results
-    for query_row in query_rows:
-        results_obj.append('%d %s %s' % (query_row.id, query_row.family, query_row.taxon_name_common))
-
-    return '\n'.join(results_obj) + '\n'
