@@ -15,8 +15,8 @@ Manifest
   * models.py - SQLAlchemy ORM data model
 * run.py - Runs the query method directly (does not actually run the Flask HTTP server)
 
-To install dependencies:
-------------------------
+To install dependencies using pip:
+----------------------------------
 
 `pip install flask`
 

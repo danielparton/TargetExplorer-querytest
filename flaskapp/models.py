@@ -1,21 +1,5 @@
 from flaskapp import db
 
-class_names = [
-    'Version',
-    'DBEntry',
-    'UniProt',
-    'UniProtGeneName',
-    'UniProtIsoform',
-    'UniProtIsoformNote',
-    'UniProtDomain',
-    'UniProtFunction',
-    'UniProtDiseaseAssociation',
-    'PDB',
-    'NCBIGeneEntry',
-    'EnsemblGeneEntry',
-    'HGNCEntry']
-
-
 class Version(db.Model):
     __tablename__ = 'version'
     id = db.Column(db.Integer, primary_key=True)
