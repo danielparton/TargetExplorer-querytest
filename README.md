@@ -1,7 +1,10 @@
 TargetExplorer-querytest
 ========================
 
-Minimal Flask/SQLAlchemy app for developing a simple query method
+Minimal version of TargetExplorer for developing a simple query method.
+
+TargetExplorer is a database framework and web API, implemented using Python
+Flask and SQLAlchemy.
 
 Manifest
 --------
