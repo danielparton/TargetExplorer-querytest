@@ -18,14 +18,14 @@ Manifest
 To install dependencies:
 ------------------------
 
-pip install flask
+`pip install flask`
 
-pip install flask-sqlalchemy
+`pip install flask-sqlalchemy`
 
 Instructions
 ------------
 
-The query method is to be implemented as query\_db, within flaskapp/views.py
+The query method is to be implemented as `query_db`, within flaskapp/views.py
 
 A placeholder method has been set up.
 
