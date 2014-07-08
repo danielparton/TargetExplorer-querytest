@@ -26,7 +26,7 @@ def query_db():
     # query_string = request.args.get('query')
 
     # Example API query strings
-    # query_string = 'family="TK"'
+    # query_string = 'UniProt.family="TK"'
     query_string = 'UniProt.family="TK" && UniProtDomain.length<270'
     # query_string = 'UniProt.family="TK" && UniProt.taxon_name_common="Human" && UniProtDomain.length<260'
 
