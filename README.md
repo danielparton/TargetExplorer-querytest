@@ -18,9 +18,9 @@ Manifest
 To install dependencies:
 ------------------------
 
-pip install flask
+`pip install flask`
 
-pip install flask-sqlalchemy
+`pip install flask-sqlalchemy`
 
 Instructions
 ------------
