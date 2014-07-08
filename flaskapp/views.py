@@ -38,9 +38,9 @@ def query_db():
     # input_string = '(family="CK1" or family="AGC") and species="Human" and domain_length>261 and domain_length<265'
 
     # TODO Use input_string to query the database.
-    # input_string uses SQLAlchemy syntax. This can be used directly, but first
-    # the frontend data fields must be converted into backend table/column
-    # identifiers
+    # input_string uses SQLAlchemy syntax. This can be used directly to query
+    # the database, but first the frontend data fields must be converted into
+    # backend table/column identifiers.
 
 
     # An example SQLAlchemy query:
