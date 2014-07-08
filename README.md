@@ -25,6 +25,11 @@ To install dependencies using pip:
 Instructions
 ------------
 
+The aim is to implement a Flask method which takes a query string as input, and
+returns a list of matching database entries. SQLAlchemy query syntax will be
+used directly in the input query string. The query method must be able to
+filter based on columns from a number of (related) tables.
+
 The query method is to be implemented as `query_db`, within flaskapp/views.py
 
 A placeholder method has been set up.
