@@ -1,7 +1,7 @@
 TargetExplorer-querytest
 ========================
 
-Minimal version of TargetExplorer for developing a simple query method.
+Minimal version of [TargetExplorer](https://github.com/choderalab/TargetExplorer), for developing a simple query method.
 
 TargetExplorer is a database framework and web API, implemented using Python
 Flask and SQLAlchemy.
