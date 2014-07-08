@@ -25,7 +25,7 @@ To install dependencies:
 Instructions
 ------------
 
-The query method is to be implemented as query\_db, within flaskapp/views.py
+The query method is to be implemented as `query\_db`, within flaskapp/views.py
 
 A placeholder method has been set up.
 
